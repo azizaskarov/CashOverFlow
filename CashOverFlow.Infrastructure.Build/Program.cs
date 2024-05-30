@@ -63,6 +63,7 @@ var githubPipeline = new GithubPipeline
     }
 };
 
+
 var aDotnetClient = new ADotNetClient();
 aDotnetClient.SerializeAndWriteToFile(
     githubPipeline,
