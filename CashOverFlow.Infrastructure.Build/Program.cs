@@ -66,4 +66,4 @@ var githubPipeline = new GithubPipeline
 var aDotnetClient = new ADotNetClient();
 aDotnetClient.SerializeAndWriteToFile(
     githubPipeline,
-    path: "fwrg");
+    path: "../../../../.github/workflows/build.yml");
