@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using System;
 
 namespace CashOverFlow;
 
@@ -36,7 +35,7 @@ public class Startup
         {
             app.UseDeveloperExceptionPage();
             app.UseSwagger();
-            app.UseSwaggerUI(config => config.SwaggerEndpoint(url: "/swagger/v1/swagger.json",name: "CashOverFlow v1"));
+            app.UseSwaggerUI(config => config.SwaggerEndpoint(url: "/swagger/v1/swagger.json", name: "CashOverFlow v1"));
         }
 
         app.UseHttpsRedirection();

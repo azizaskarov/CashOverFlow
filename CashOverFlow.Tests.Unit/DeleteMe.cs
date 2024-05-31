@@ -1,5 +1,3 @@
-using Xunit;
-
 namespace CashOverFlow.Tests.Unit;
 
 public class DeleteMe

@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using CashOverFlow.Models.Companies;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace CashOverFlow.Brokers.Storages;
