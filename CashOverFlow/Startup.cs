@@ -1,3 +1,4 @@
+using CashOverFlow.Brokers.Storages;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,7 @@ public class Startup
     {
 
         services.AddControllers();
+        services.AddDbContext<StorageBroker>();
 
         services.AddSwaggerGen(c =>
         {
