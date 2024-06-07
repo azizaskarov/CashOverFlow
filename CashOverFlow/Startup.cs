@@ -1,9 +1,12 @@
+using CashOverFlow.Brokers.Loggeings;
+using CashOverFlow.Brokers.Loggings;
 using CashOverFlow.Brokers.Storages;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace CashOverFlow;
@@ -27,6 +30,8 @@ public class Startup
         {
             c.SwaggerDoc(name: "v1", info: new OpenApiInfo { Title = "CashOverFlow", Version = "v1" });
         });
+
+        AddBrokers(services);
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -46,5 +51,11 @@ public class Startup
         {
             endpoints.MapControllers();
         });
+    }
+
+    private void AddBrokers( IServiceCollection services)
+    {
+        services.AddTransient<IStorageBroker, StorageBroker>();
+        services.AddTransient<ILoggingBroker, LoggingBroker>();
     }
 }
